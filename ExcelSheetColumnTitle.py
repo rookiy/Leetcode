@@ -14,10 +14,6 @@ class Solution:
             n = (n - tmp) / 26
         return ''.join(l)
         
-        
-        
-        
-        
 def main():
     sys.stdin = open('./1.txt', 'r')
     solution = Solution()
