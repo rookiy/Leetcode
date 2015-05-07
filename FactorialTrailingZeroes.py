@@ -10,7 +10,6 @@ class Solution:
             count += n
         return count
         
-        
 def main():
     sys.stdin = open('./1.txt', 'r')
     solution = Solution()
