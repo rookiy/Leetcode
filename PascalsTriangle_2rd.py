@@ -7,7 +7,8 @@ class Solution:
         res = []
         for i in range(0, k):
             curr = list(res[-1]) if len(res) else []
-            for i in range(1, len(curr)):
+            # reversed is not necessary
+            for i in reversed(range(1, len(curr))):
                 curr[i] = res[-1][i - 1] + res[-1][i]
             res.append(curr + [1])
         return res
