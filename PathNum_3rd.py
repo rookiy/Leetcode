@@ -11,7 +11,7 @@ class Solution:
     # @param {integer} sum
     # @return {boolean}
     def hasPathSum(self, root, sum):
-        # 递归函数访问每个节点
+        # 递归函数访问每个节点,递归先序遍历，更简单的做法是直接将get()的内容移到hasPathSum(),直接递归这个函数
         if not root:
             return False
         # 从根节点开始
