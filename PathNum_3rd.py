@@ -11,7 +11,8 @@ class Solution:
     # @param {integer} sum
     # @return {boolean}
     def hasPathSum(self, root, sum):
-        # 递归函数访问每个节点,递归先序遍历，更简单的做法是直接将get()的内容移到hasPathSum(),直接递归这个函数
+        # 递归函数访问每个节点,递归先序遍历，更简单的做法是直接将get()
+        # 的内容移到hasPathSum(),直接递归这个函数
         if not root:
             return False
         # 从根节点开始
@@ -21,8 +22,8 @@ class Solution:
         if not root:
             return False
         # 当前节点存在，且为叶子，且值与剩余路径值相同，返回True
-        elif not root.left and not root.right and root.val == sum:
-            return True
+        elif not root.left and not root.right :
+            return root.val == sum
         # 如果当前节点不为叶子，或值不满足，继续访问当前节点的左右孩子
         if self.get(root.left, sum-root.val) or self.get(root.right, sum-root.val):
             # 如果左右孩子存在满足要求的节点，那么返回True
