@@ -1,15 +1,19 @@
 #!/usr/bin/env python
+#!/usr/bin/env python
 import sys
-
+import math
 class Solution:
     # @param {integer[]} nums
     # @return {integer}
     def rob(self, nums):
-        Earning = nums[:]
-        Earning.insert(0, 0)
-        for i in range(2, len(Earning)):
-            Earning[i] = Earning[i-1] if Earning[i-1] > Earning[i] + Earning[i-2] else Earning[i] + Earning[i-2]
-        return Earning[len(nums)]
+        a, b = 0, 0
+        for i in range(len(nums)):
+            if i % 2 == 0:
+                a = a + nums[i] if a + nums[i] > b else b
+            else:
+                b = b + nums[i] if b + nums[i] > a else a
+        return a if a>b else b
+        
         
         
 def main():
@@ -19,3 +23,4 @@ def main():
     
 if __name__ == '__main__':
     main()
+
